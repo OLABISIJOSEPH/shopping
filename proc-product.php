@@ -15,7 +15,8 @@ if(!$product || !$quantity || !$size || !$color || !$specification)
     exit;
 }
 
-$query = "insert into product (product_name,quantity,size,color,specification) values ('$product_name','$quantity','$size','$color','$specification')";
+echo $query = "insert into product (product_name,quantity,size,color,specification) values ('$product_name','$quantity','$size','$color','$specification')";
+exit;
 $result = mysqli_query($conn,$query);
 if($result)
 {

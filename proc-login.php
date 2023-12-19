@@ -27,7 +27,7 @@ $row = mysqli_fetch_array($result);
 if($num_records > 0)
 {
     $_SESSION['valid_user'] = $username;
-    $_SESSION['privilege'] = $row['privilege'];
+    $_SESSION['privilege'] = $row['privileged'];
 
 
     include('dashboard.php');

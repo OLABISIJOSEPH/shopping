@@ -4,6 +4,6 @@ error_reporting(E_ALL & ~E_STRICT & ~E_DEPRECATED & ~E_WARNING);
 
 
 
-$conn = mysqli_connect("localhost", "root", "", "shopping_chart") or die("Cannot connect to database server");
+$conn = mysqli_connect("localhost", "shopping_chart", "shopping", "shopping_chart") or die("Cannot connect to database server");
 
 ?>
