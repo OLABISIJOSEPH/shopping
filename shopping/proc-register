@@ -1,0 +1,48 @@
+<?php
+include('connect.php');
+// require_once("fns.php");
+
+
+$firstname = $_POST['firstname'];
+$lastname = $_POST['lastname']; 
+$username = $_POST['username'];
+$password = $_POST['password'];
+$repeatpass = $_POST['repeatpass'];
+ 
+
+if(!$firstname || !$lastname || !$username || !$password || !$repeatpass)
+{
+    $error = 'All information required';
+    include('register.php');
+    exit;
+}
+
+$pass_response = validatePassword($password);
+
+if($pass_response != 'Password is valid.')
+{
+    $error = $pass_response;
+    include('register.php');
+    exit;
+}
+
+ 
+
+
+$query = "insert into register (firstname,lastname,username,password,repeatpass) values ('$firstname','$lastname','$username','$password','$repeatpass')";
+$result = mysqli_query($conn,$query);
+if($result)
+{
+    $success = 'Thank you for registering with us. <a href="index.php">Click here</a> to login';
+    include('register.php');
+    exit;
+}
+else{
+    
+    $error = 'Username already exists';
+    include('register.php');
+    exit;
+}
+
+
+?>
