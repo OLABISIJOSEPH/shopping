@@ -9,6 +9,12 @@ $size = $_POST['size'];
 $color = $_POST['color'];
 $specification = $_POST['specification'];
 
+if(!$product || !$quantity || !$size || !$color || !$specification)
+{
+  include('view-product.php');
+    exit;
+}
+
 $query = "insert into product (product_name,quantity,size,color,specification) values ('$product_name','$quantity','$size','$color','$specification')";
 $result = mysqli_query($conn,$query);
 if($result)

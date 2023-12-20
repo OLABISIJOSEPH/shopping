@@ -86,11 +86,12 @@ include('connect.php');
 
                             </form>  -->
 
-                            <div class="new btn btn-danger">
+                            
+
+                            <div class="new">
                               <a href="product.php">ADD NEW PRODUCTS</a><br>
                             </div>
                          
-  
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
